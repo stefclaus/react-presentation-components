@@ -1,11 +1,11 @@
 # React Presentation Components
 
 ## Overview
-In this lesson, we will examine a specific "type" of React component known as a "presentation" or "presentational" component.
+In this lesson, we will examine a specific "type" of React component known as a "presentational" component.
 
 ## Objectives
 
-1. Explain the benefits of presentation components
+1. Explain the benefits of presentational components
 2. Describe how we can add interactivity to presentational components by adding a callback function as a prop
 3. Explain how to use stateless functional components
 
@@ -15,7 +15,7 @@ The answer to this question, as you may have guessed, is that a presentational c
 
 ![I'm So Pretty](https://media.giphy.com/media/oLz0TmduZsUjm/giphy.gif)
 
-There is, however, a bit more thinking that we need to do here, just so we understand precisely what it means when we say that a component is of the type "presentational." Very often when we speak of classes or categories of things in the world of programming, the types or classes that we are discussing are actually formalized in the libraries or languages themselves. Think, for example, of when we declare a React `Component.` When we do that we write either `React.createClass()` or (using the ES2015 format) `class SomeComponent extends Component`. Either way, we are creating an actual instance of `Component`.
+There is, however, a bit more thinking that we need to do here, just so we understand precisely what it means when we say that a component is of the type "presentational." Very often when we speak of classes or categories of things in the world of programming, the types or classes that we are discussing are actually formalized in the libraries or languages themselves. Think, for example of when we declare a React `Component.` we write `class SomeComponent extends Component`. Either way, we are creating an actual instance of `Component`.
 
 But here's the rub. When we say that some component is "presentational" *we definitely do not mean* that the component is a formal type or class defined by the React library. There is no such thing as type `PresentationalComponent` in the React library. Rather, what we are dealing with here is simply a useful *convention*, or, better yet, a *programming pattern* that coders who have used React have found themselves following over and over again as they compose their component-based React UIs.
 
@@ -33,11 +33,11 @@ Okay, so there's our pattern description. Now let's jump into some code and see 
 Yep, this is true. Think about it. If a presentational component is simply a component that doesn't know anything about how to get the data it displays, and is mainly responsible for presentation, then you've been doing this from the beginning. A simple `HelloWorld` component, for example, is almost certainly presentational. Let's see if that's right &mdash; we'll even give our component the ability to take a prop:
 
 ```javascript
-const HelloWorld = React.createClass({
-  render: function() {
+class HelloWorld extends Component {
+  render() {
     return <div class="hello-world">Hello {this.props.message || 'World' }</div>;
   }
-})
+}
 ```
 
 So does this fit our pattern? Absolutely, it does. Here is a component that does nothing but render a piece of our UI; that has no notion of how to fetch or reload the `message` data that it takes in as a `prop`; that has no changeable state; and that only contains a render method. So, I think we can safely say it fits the pattern well.
@@ -53,13 +53,14 @@ With React, we can do much better! Consider this `TextField` component:
 ```javascript
 const defaultLimit = 100
 
-export default class TextField extends React.Component {
+class TextField extends Component {
   render() {
     return (
       <input
         className="field field-light"
         onChange={this.props.onChange}
-        maxLength={this.props.limit || defaultLimit} />
+        maxLength={this.props.limit || defaultLimit} 
+      />
     );
   }
 }
@@ -82,14 +83,12 @@ So what's this look like? Here's our `TextField` component rendered as a so-call
 ```javascript
 const defaultLimit = 100
 
-export default function TextField(props) {
-  return (
-    <input
-      className="field field-light"
-      onChange={props.onChange}
-      limit={props.limit || defaultLimit} />
-  );
-}
+const TextField = (props) => 
+  <input
+    className="field field-light"
+    onChange={props.onChange}
+    limit={props.limit || defaultLimit} 
+  />;
 ```
 Now isn't that just beautiful? It really is. It's just so concise. We've discarded all that ugly boilerplate. But it's not only concision that makes this beautiful. By transforming our component into a stateless function, we have made our `TextField` component an extremely stable and predictable part of our application.
 
