@@ -86,8 +86,8 @@ export default function TextField(props) {
   return (
     <input
       className="field field-light"
-      onChange={this.props.onChange}
-      limit={this.props.limit || defaultLimit} />
+      onChange={props.onChange}
+      limit={props.limit || defaultLimit} />
   );
 }
 ```
