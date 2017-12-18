@@ -35,7 +35,7 @@ Yep, this is true. Think about it. If a presentational component is simply a com
 ```javascript
 class HelloWorld extends Component {
   render() {
-    return <div class="hello-world">Hello {this.props.message || 'World' }</div>;
+    return <div className="hello-world">Hello {this.props.message || 'World' }</div>;
   }
 }
 ```
@@ -59,7 +59,7 @@ class TextField extends Component {
       <input
         className="field field-light"
         onChange={this.props.onChange}
-        maxLength={this.props.limit || defaultLimit} 
+        maxLength={this.props.limit || defaultLimit}
       />
     );
   }
@@ -83,11 +83,11 @@ So what's this look like? Here's our `TextField` component rendered as a so-call
 ```javascript
 const defaultLimit = 100
 
-const TextField = (props) => 
+const TextField = (props) =>
   <input
     className="field field-light"
     onChange={props.onChange}
-    limit={props.limit || defaultLimit} 
+    limit={props.limit || defaultLimit}
   />;
 ```
 Now isn't that just beautiful? It really is. It's just so concise. We've discarded all that ugly boilerplate. But it's not only concision that makes this beautiful. By transforming our component into a stateless function, we have made our `TextField` component an extremely stable and predictable part of our application.
