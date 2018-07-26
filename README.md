@@ -16,14 +16,11 @@ callback function as a prop
 
 The answer to this question, as you may have guessed, is that a presentational
 component is a component whose primary responsibility is to render some piece of
-the beautiful user interfaces that we get to build as web developers. Their job,
-in other words, is to look good!
+the what user sees. Their job, in other words, is to look good!
 
 ![I'm So Pretty](https://media.giphy.com/media/oLz0TmduZsUjm/giphy.gif)
 
-There is, however, a bit more thinking that we need to do here, just so we
-understand precisely what it means when we say that a component is of the type
-"presentational." Very often when we speak of classes or categories of things in
+There is, however, a bit more thinking that we need to do here. Very often when we speak of classes or categories of things in
 the world of programming, the types or classes that we are discussing are
 actually formalized in the libraries or languages themselves. Think, for example
 of when we declare a React `Component.` we write `class SomeComponent extends
@@ -55,9 +52,9 @@ how presentation components actually look in practice.
 
 ## Surprise, you've already written presentational components!
 
-Yep, this is true. Think about it. If a presentational component is simply a
-component that doesn't know anything about how to get the data it displays, and
-is mainly responsible for presentation, then you've been doing this from the
+Yep, this is true. Think about it. A presentational component is simply a
+component that doesn't know anything about how to get the data it displays. If
+they are mainly responsible for presentation, then you've been writing them from the
 beginning. A simple `HelloWorld` component, for example, is almost certainly
 presentational. Let's see if that's right &mdash; we'll even give our component
 the ability to take a prop:
@@ -83,10 +80,9 @@ example, but consider this: let's say we are working on a massive web
 application, and we'd like to standardize as well as place some limits on the
 characteristics of the  text inputs used throughout the application's forms.
 
-In this case, we could certainly establish a style guide in our development team
-that dictates that all uses of `<input>` use a specific set of CSS classes,
-defined in our stylesheets, but this leaves our app open to a lot of human
-error. People would have to consistently follow the convention over time. And
+In this case, we could certainly establish a style guide that dictates that all uses of `<input>` use a specific set of CSS classes,
+defined in our stylesheets. But this leaves our app open to a lot of human
+error. We would have to consistently follow the convention over time. And
 while we could certainly add props to our inputs by doing something like this --
 `<input className='field' {...props}>` -- we've left the types of props that can
 be provided to our inputs wide open.
@@ -123,9 +119,9 @@ can still have a degree of interactivity through the addition of callbacks.
 
 Now, of course, we can argue about whether wrapping the `<input>` field in this
 way is a good idea. After all, `<input>`s are nice simple implementations in
-their own right. But providing a component-based interface to text inputs as we
-have in the field above is potentially a great win for simplicity in our app. It
-specifically defines what we mean by a text input; it does so in a way that
+their own right. However, providing a component-based interface to text inputs as we
+have in the field above can be a great win for simplicity in our app. It
+specifically defines what we mean by a text input. It defines it in a way that
 arguably covers the majority of use-cases we can imagine for a simple text
 input; and it provides this definition in one place that can be found and
 updated easily in the future. Win, win, win. Are we beginning to see the power
