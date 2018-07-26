@@ -62,7 +62,7 @@ the ability to take a prop:
 ```javascript
 class HelloWorld extends Component {
   render() {
-    return <div class="hello-world">Hello {this.props.message || 'World' }</div>;
+    return <div className="hello-world">Hello {this.props.message || 'World' }</div>;
   }
 }
 ```
