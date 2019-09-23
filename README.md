@@ -23,7 +23,7 @@ the what user sees. Their job, in other words, is to look good!
 There is, however, a bit more thinking that we need to do here. Very often when we speak of classes or categories of things in
 the world of programming, the types or classes that we are discussing are
 actually formalized in the libraries or languages themselves. Think, for example
-of when we declare a React `Component.` we write `class SomeComponent extends
+of when we declare a React `Component.` We write `class SomeComponent extends
 Component`. Either way, we are creating an actual instance of `Component`.
 
 But here's the rub. When we say that some component is "presentational" *we
