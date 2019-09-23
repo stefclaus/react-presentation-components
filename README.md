@@ -105,7 +105,7 @@ class TextField extends Component {
 }
 ```
 
-First off, notice that here again, what we have a component that fits the
+First off, notice that here again, what we have is a component that fits the
 presentational pattern. It's a simple wrapper around an `<input>`. But look how
 powerful it is! This simple wrapper establishes the CSS classes we will use in
 one place for every single input used throughout the app. Think of how easy it
