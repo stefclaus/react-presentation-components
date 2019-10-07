@@ -190,4 +190,17 @@ theme.)
 - Dan Abramov, ["Presentational and Container Components"](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
 - [Stateless Functions](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions)
 
+## Addendum on Presentational Components
+
+React is an ever evolving framework. THinking of components as presentational is only
+one design pattern available and newer features in React allow for alternative designs.
+
+We continue to include this content because it is important as someone new to React
+that you play around and become more familiar with the different ways you can use
+components. You will be better equipped to understand the newer features of React by
+first practicing some patterns that, while no longer emphasized, are closer to 
+object-oriented patterns we've seen previously. Once finished with the materials in
+this course, we encourage you to visit [https://reactjs.org/](https://reactjs.org/) and 
+read up on the newest ways in which we can structure components.
+
 <p class='util--hide'>View <a href='https://learn.co/lessons/react-presentation-components'>Presentation Components</a> on Learn.co and start learning to code for free.</p>
