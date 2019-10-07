@@ -192,7 +192,7 @@ theme.)
 
 ## Addendum on Presentational Components
 
-React is an ever evolving framework. THinking of components as presentational is only
+React is an ever evolving framework. Thinking of components as presentational is only
 one design pattern available and newer features in React allow for alternative designs.
 
 We continue to include this content because it is important as someone new to React
